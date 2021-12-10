@@ -1,0 +1,61 @@
+<header>
+    <h2>Angular Blog</h2>
+    <div class="buttons">
+        <input type="button" class="add" value="Add post" (click)="addPost()" *ngIf="user !==''">
+        <input type="button" class="user" value="{{user}}" *ngIf="user !==''">
+        <input type="button" class="signout" value="Sign Out" (click)="user = ''" *ngIf="user !==''">
+        <input type="button" class="signin" value="Sign In" *ngIf="user ===''" (click)="signIn()">
+        <input type="button" class="signup" value="Sign Up" *ngIf="user ===''" (click)="signUp()">
+    </div>
+</header>
+
+<div class="main">
+    <div class="blog" *ngFor ="let blog of blogs; let i = index;">
+        <h4>{{blog.topic}}</h4>
+        <div class="blog__box">
+            <div class="author">Posted by: {{blog.postedBy}} </div>
+            <div class="time">&#9200; {{blog.date | date: 'HH:mm, dd.MM.YYYY'}}</div>
+        </div>
+        <p>{{blog.message}}</p>
+        <div class="blog__buttons">
+            <input type="button" class="edit" value="edit" (click)="editPost(i)"
+            *ngIf="user === blog.postedBy || user === 'admin'">
+            <input type="button" class="delete" value="delete" 
+            (click)="deleteBlog(i)" *ngIf="user === blog.postedBy || user === 'admin'">
+        </div>
+    </div>
+</div>
+
+<div class="modal-block" [hidden]="!isEditPost && !isAddPost && !isSignIn && !isSignUp" >
+    <div class="post" *ngIf = "isAddPost || isEditPost">
+        <h3><span *ngIf="isAddPost">Add</span> <span *ngIf="isEditPost">Edit</span> post
+            <span class="shut" (click)="isEditPost = false; isAddPost = false">&times;</span>
+        </h3>
+        <h6>Title:</h6>
+            <input type="text" [(ngModel)]="post.title">
+        <h6>Text:</h6>
+            <textarea name="" [(ngModel)]="post.text"></textarea>
+        <div>
+            <input type="button" value="Close" class="close" 
+            (click)="isEditPost = false; isAddPost = false">
+            <input type="button" value="Post" class="addPost" (click)="addOrEditBlog()" *ngIf="isAddPost">
+            <input type="button" value="Edit Post" class="addPost" (click)="addOrEditBlog()" *ngIf="isEditPost">
+        </div>
+    </div>
+    <div class="sign" *ngIf="isSignIn || isSignUp">
+        <h3>Sign <span *ngIf="isSignIn">In</span> <span *ngIf="isSignUp">Up</span>
+            <span class="shut" (click)="isSignIn = false; isSignUp = false">&times;</span>
+        </h3>
+        <h6  *ngIf="isSignUp">Username:</h6>
+        <input type="text" [(ngModel)]="candidate.username" *ngIf="isSignUp">
+        <h6>Email:</h6>
+        <input type="text" [(ngModel)]="candidate.email">
+        <h6>Password:</h6>
+        <input type="password" [(ngModel)]="candidate.password">
+        <div>
+            <input type="button" value="Close" class="close" (click)="isSignIn = false; isSignUp = false">
+            <input type="button" value="Submit" class="submitGreen" (click)="submitSignIn()" *ngIf="isSignIn">
+            <input type="button" value="Submit" class="submitBlue" (click)="submitSignUp()" *ngIf="isSignUp">
+        </div>
+    </div>
+</div>

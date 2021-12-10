@@ -1,0 +1,147 @@
+@import "../shared/styles/base";
+@import "../shared/styles/mixins";
+
+header {
+  display: flex;
+  background-color: black;
+  padding: 0.5rem;
+  h2 {
+    color: white;
+    font-size: 1.5rem;
+  }
+  .buttons {
+    margin-left: auto;
+    line-height: 1.5rem;
+    .add {
+      @include buttons(5rem, green);
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .signin {
+      @include buttons(5rem, green);
+    }
+    .signout {
+      @include buttons(5rem, gold, black);
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    .signup {
+      @include buttons(5rem, #007bff);
+    }
+    .user {
+      height: 2rem;
+      border: 1px solid gold;
+      background-color: gold;
+      width: 4rem;
+      color: black;
+      margin: 0 -1px;
+      font-size: 1rem;
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
+
+.main {
+  margin: 0 auto;
+  width: 90vw;
+  .blog {
+    border: 1px solid lightgrey;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    h4 {
+      font-size: 1.2rem;
+    }
+    &__box {
+      display: flex;
+      width: 100%;
+      margin: 0.5rem 0;
+      font-weight: 700;
+      .time {
+        margin-left: auto;
+      }
+    }
+    p {
+      text-align: justify;
+    }
+    &__buttons {
+      text-align: right;
+      .edit {
+        @include buttons2(gold, darken(gold, 10%), 3rem, black);
+      }
+      .delete {
+        @include buttons2(red, darken(red, 15%), 3rem);
+      }
+    }
+  }
+}
+
+.post,
+.sign,
+.modal-block {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.modal-block {
+  background-color: rgba(0, 0, 0, 0.3);
+  .post,
+  .sign {
+    width: 500px;
+    height: 330px;
+    background-color: white;
+    border: 1px solid white;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h3 {
+      margin-bottom: 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid lightgrey;
+      padding: 0.5rem;
+      position: relative;
+      font-size: 1.2rem;
+      .shut {
+        margin-left: auto;
+        position: absolute;
+        right: 0.5rem;
+        top: 0.5rem;
+        cursor: pointer;
+      }
+    }
+    h6 {
+      margin: 1rem 0 0.5rem;
+      font-size: 0.8rem;
+    }
+    input[type="text"],
+    input[type="password"] {
+      @include textinput(100%, 2rem);
+    }
+    textarea {
+      @include textinput(100%, 4rem);
+    }
+    div {
+      text-align: right;
+      margin-top: 1.5rem;
+      border-top: 1px solid lightgrey;
+      padding-top: 0.5rem;
+      .addPost,
+      .submitGreen {
+        @include buttons2(green, darken(green, 10%), 4rem);
+      }
+      .close {
+        @include buttons2(grey, darken(grey, 15%), 4rem);
+        margin-right: 0.5rem;
+      }
+      .submitBlue {
+        @include buttons2(#2b60de, darken(#2b60de, 10%), 4rem);
+      }
+    }
+  }
+}

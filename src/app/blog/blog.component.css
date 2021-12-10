@@ -1,0 +1,386 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: black;
+  padding: 0.5rem;
+}
+
+header h2 {
+  color: white;
+  font-size: 1.5rem;
+}
+
+header .buttons {
+  margin-left: auto;
+  line-height: 1.5rem;
+}
+
+header .buttons .add {
+  height: 2rem;
+  border-radius: 5px;
+  border: 1px solid green;
+  background-color: black;
+  width: 5rem;
+  color: green;
+  margin: 0 1px;
+  font-size: 1rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+header .buttons .add:hover {
+  background-color: green;
+  cursor: pointer;
+  color: white;
+}
+
+header .buttons .add:focus {
+  -webkit-box-shadow: 0 0 3px 1px #00b300;
+          box-shadow: 0 0 3px 1px #00b300;
+  outline: 0;
+}
+
+header .buttons .signin {
+  height: 2rem;
+  border-radius: 5px;
+  border: 1px solid green;
+  background-color: black;
+  width: 5rem;
+  color: green;
+  margin: 0 1px;
+  font-size: 1rem;
+}
+
+header .buttons .signin:hover {
+  background-color: green;
+  cursor: pointer;
+  color: white;
+}
+
+header .buttons .signin:focus {
+  -webkit-box-shadow: 0 0 3px 1px #00b300;
+          box-shadow: 0 0 3px 1px #00b300;
+  outline: 0;
+}
+
+header .buttons .signout {
+  height: 2rem;
+  border-radius: 5px;
+  border: 1px solid gold;
+  background-color: black;
+  width: 5rem;
+  color: gold;
+  margin: 0 1px;
+  font-size: 1rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+header .buttons .signout:hover {
+  background-color: gold;
+  cursor: pointer;
+  color: black;
+}
+
+header .buttons .signout:focus {
+  -webkit-box-shadow: 0 0 3px 1px #ffdf33;
+          box-shadow: 0 0 3px 1px #ffdf33;
+  outline: 0;
+}
+
+header .buttons .signup {
+  height: 2rem;
+  border-radius: 5px;
+  border: 1px solid #007bff;
+  background-color: black;
+  width: 5rem;
+  color: #007bff;
+  margin: 0 1px;
+  font-size: 1rem;
+}
+
+header .buttons .signup:hover {
+  background-color: #007bff;
+  cursor: pointer;
+  color: white;
+}
+
+header .buttons .signup:focus {
+  -webkit-box-shadow: 0 0 3px 1px #3395ff;
+          box-shadow: 0 0 3px 1px #3395ff;
+  outline: 0;
+}
+
+header .buttons .user {
+  height: 2rem;
+  border: 1px solid gold;
+  background-color: gold;
+  width: 4rem;
+  color: black;
+  margin: 0 -1px;
+  font-size: 1rem;
+}
+
+header .buttons .user:focus {
+  outline: 0;
+}
+
+.main {
+  margin: 0 auto;
+  width: 90vw;
+}
+
+.main .blog {
+  border: 1px solid lightgrey;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.main .blog h4 {
+  font-size: 1.2rem;
+}
+
+.main .blog__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: 0.5rem 0;
+  font-weight: 700;
+}
+
+.main .blog__box .time {
+  margin-left: auto;
+}
+
+.main .blog p {
+  text-align: justify;
+}
+
+.main .blog__buttons {
+  text-align: right;
+}
+
+.main .blog__buttons .edit {
+  height: 2rem;
+  border-radius: 5px;
+  border-width: 0;
+  background-color: gold;
+  width: 3rem;
+  color: black;
+}
+
+.main .blog__buttons .edit:hover {
+  background-color: #ccac00;
+  cursor: pointer;
+}
+
+.main .blog__buttons .edit:focus {
+  border: 2px solid gold;
+  outline: 0;
+}
+
+.main .blog__buttons .delete {
+  height: 2rem;
+  border-radius: 5px;
+  border-width: 0;
+  background-color: red;
+  width: 3rem;
+  color: white;
+}
+
+.main .blog__buttons .delete:hover {
+  background-color: #b30000;
+  cursor: pointer;
+}
+
+.main .blog__buttons .delete:focus {
+  border: 2px solid red;
+  outline: 0;
+}
+
+.post,
+.sign,
+.modal-block {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.modal-block {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-block .post,
+.modal-block .sign {
+  width: 500px;
+  height: 330px;
+  background-color: white;
+  border: 1px solid white;
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modal-block .post h3,
+.modal-block .sign h3 {
+  margin-bottom: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid lightgrey;
+  padding: 0.5rem;
+  position: relative;
+  font-size: 1.2rem;
+}
+
+.modal-block .post h3 .shut,
+.modal-block .sign h3 .shut {
+  margin-left: auto;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  cursor: pointer;
+}
+
+.modal-block .post h6,
+.modal-block .sign h6 {
+  margin: 1rem 0 0.5rem;
+  font-size: 0.8rem;
+}
+
+.modal-block .post input[type="text"],
+.modal-block .post input[type="password"],
+.modal-block .sign input[type="text"],
+.modal-block .sign input[type="password"] {
+  border-radius: 5px;
+  height: 2rem;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid lightgray;
+}
+
+.modal-block .post input[type="text"]:focus,
+.modal-block .post input[type="password"]:focus,
+.modal-block .sign input[type="text"]:focus,
+.modal-block .sign input[type="password"]:focus {
+  -webkit-box-shadow: 0 0 3px 3px rgba(71, 209, 205, 0.5);
+          box-shadow: 0 0 3px 3px rgba(71, 209, 205, 0.5);
+  outline: 0;
+}
+
+.modal-block .post textarea,
+.modal-block .sign textarea {
+  border-radius: 5px;
+  height: 4rem;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid lightgray;
+}
+
+.modal-block .post textarea:focus,
+.modal-block .sign textarea:focus {
+  -webkit-box-shadow: 0 0 3px 3px rgba(71, 209, 205, 0.5);
+          box-shadow: 0 0 3px 3px rgba(71, 209, 205, 0.5);
+  outline: 0;
+}
+
+.modal-block .post div,
+.modal-block .sign div {
+  text-align: right;
+  margin-top: 1.5rem;
+  border-top: 1px solid lightgrey;
+  padding-top: 0.5rem;
+}
+
+.modal-block .post div .addPost,
+.modal-block .post div .submitGreen,
+.modal-block .sign div .addPost,
+.modal-block .sign div .submitGreen {
+  height: 2rem;
+  border-radius: 5px;
+  border-width: 0;
+  background-color: green;
+  width: 4rem;
+  color: white;
+}
+
+.modal-block .post div .addPost:hover,
+.modal-block .post div .submitGreen:hover,
+.modal-block .sign div .addPost:hover,
+.modal-block .sign div .submitGreen:hover {
+  background-color: #004d00;
+  cursor: pointer;
+}
+
+.modal-block .post div .addPost:focus,
+.modal-block .post div .submitGreen:focus,
+.modal-block .sign div .addPost:focus,
+.modal-block .sign div .submitGreen:focus {
+  border: 2px solid green;
+  outline: 0;
+}
+
+.modal-block .post div .close,
+.modal-block .sign div .close {
+  height: 2rem;
+  border-radius: 5px;
+  border-width: 0;
+  background-color: grey;
+  width: 4rem;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.modal-block .post div .close:hover,
+.modal-block .sign div .close:hover {
+  background-color: #5a5a5a;
+  cursor: pointer;
+}
+
+.modal-block .post div .close:focus,
+.modal-block .sign div .close:focus {
+  border: 2px solid grey;
+  outline: 0;
+}
+
+.modal-block .post div .submitBlue,
+.modal-block .sign div .submitBlue {
+  height: 2rem;
+  border-radius: 5px;
+  border-width: 0;
+  background-color: #2b60de;
+  width: 4rem;
+  color: white;
+}
+
+.modal-block .post div .submitBlue:hover,
+.modal-block .sign div .submitBlue:hover {
+  background-color: #1d4bb9;
+  cursor: pointer;
+}
+
+.modal-block .post div .submitBlue:focus,
+.modal-block .sign div .submitBlue:focus {
+  border: 2px solid #2b60de;
+  outline: 0;
+}
+/*# sourceMappingURL=blog.component.css.map */

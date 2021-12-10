@@ -1,0 +1,46 @@
+@mixin buttons($w, $c, $c2: white) {
+  height: 2rem;
+  border-radius: 5px;
+  border: 1px solid $c;
+  background-color: black;
+  width: $w;
+  color: $c;
+  margin: 0 1px;
+  font-size: 1rem;
+  &:hover {
+    background-color: $c;
+    cursor: pointer;
+    color: $c2;
+  }
+  &:focus {
+    box-shadow: 0 0 3px 1px lighten($c, 10%);
+    outline: 0;
+  }
+}
+@mixin buttons2($bc, $bch, $w, $c: white) {
+  height: 2rem;
+  border-radius: 5px;
+  border-width: 0;
+  background-color: $bc;
+  width: $w;
+  color: $c;
+  &:hover {
+    background-color: $bch;
+    cursor: pointer;
+  }
+  &:focus {
+    border: 2px solid $bc;
+    outline: 0;
+  }
+}
+@mixin textinput($w, $h) {
+  border-radius: 5px;
+  height: $h;
+  width: $w;
+  padding: 5px;
+  border: 1px solid lightgray;
+  &:focus {
+    box-shadow: 0 0 3px 3px rgba(71, 209, 205, 0.5);
+    outline: 0;
+  }
+}
